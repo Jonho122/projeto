@@ -50,5 +50,12 @@ def verificar_palindromo(texto):
     print("A frase '{}' é um palíndromo".format(texto))
     else:
     print("A frase '{}' não é um palíndromo".format(texto))
-'''
+
 # Prática seis, gerar um programa que conte a quantidade de palavras em uma string.
+
+def contar_palavras(texto):
+    return len(texto.split())
+    # Essa função conta a quantidade de palavras em uma string
+   texto = input("Digite a frase que deseja contar: ")
+    print("A frase '{}' tem {} palavras".format(texto, contar_palavras(texto)))
+'''
