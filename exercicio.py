@@ -1,3 +1,5 @@
+import math
+import random
 # Prática um, gerar um programa que conte a quantidade de vogais em uma string.
 '''def contar_vogais(texto):
     simples = texto.lower()
@@ -118,21 +120,39 @@ finally:
 '''
 1. **Cálculo da Hipotenusa**
    - Escreva um programa que solicita ao usuário os valores dos catetos de um triângulo e calcule a hipotenusa usando a função **`math.sqrt`** e o teorema de Pitágoras.
-
+    a = float(input("Digite o valor do cateto a: "))  
+    b = float(input("Digite o valor do cateto b: "))
+        if a > 0 and b > 0:
+           hipotenusa = math.sqrt(a**2 + b**2)
+            print ("A hipotenusa é: ", hipotenusa)
+        else:
+            print("Os valores dos catetos devem ser positivos ou iguais a zero.")
 2. **Área de um Círculo**
    - Solicite ao usuário o raio de um círculo e calcule sua área utilizando **`math.pi`** e a fórmula \( \text{Área} = \pi \cdot r^2 \).
-
+    raio = float(input("Digite o valor do raio do círculo: "))
+    area = math.pi * (raio ** 2)
+    print(f"A área do círculo é: {area}")
 3. **Cálculos Trigonométricos**
    - Peça ao usuário um ângulo em graus e:
      - Converta-o para radianos com **`math.radians`**.
      - Calcule o seno, cosseno e tangente utilizando **`math.sin`**, **`math.cos`** e **`math.tan`**.
-
+    angulo = float(input("Digite o ângulo em graus: "))
+    angulo_rad = math.radians(angulo)
+    seno = math.sin(angulo_rad)
+    cosseno = math.cos(angulo_rad)
+    tangente = math.tan(angulo_rad)
+    print(f"Seno: {seno}, Cosseno: {cosseno}, Tangente: {tangente}")
 4. **Arredondamento e Fatoriais**
    - Escreva um programa que:
      - Solicite um número decimal e arredonde-o para cima e para baixo usando **`math.ceil`** e **`math.floor`**.
      - Solicite um número inteiro e calcule seu fatorial com **`math.factorial`**.
-
-
+    decimal = float(input("Digite um número decimal: "))
+    arredondado_cima = math.ceil(decimal)
+    arredondado_baixo = math.floor(decimal)
+    print(f"Arredondado para cima: {arredondado_cima}, Arredondado para baixo: {arredondado_baixo}")
+    fator = int(input("Digite um número inteiro para calcular o fatorial: "))
+    fatorial = math.factorial(fator)
+    print(f"O fatorial de {fator} é: {fatorial}")
 
 ### **Exercícios com a biblioteca `random`**
 
