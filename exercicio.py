@@ -1,3 +1,5 @@
+import math
+import random
 # Prática um, gerar um programa que conte a quantidade de vogais em uma string.
 '''def contar_vogais(texto):
     simples = texto.lower()
@@ -118,36 +120,76 @@ finally:
 '''
 1. **Cálculo da Hipotenusa**
    - Escreva um programa que solicita ao usuário os valores dos catetos de um triângulo e calcule a hipotenusa usando a função **`math.sqrt`** e o teorema de Pitágoras.
-
+    a = float(input("Digite o valor do cateto a: "))  
+    b = float(input("Digite o valor do cateto b: "))
+        if a > 0 and b > 0:
+           hipotenusa = math.sqrt(a**2 + b**2)
+            print ("A hipotenusa é: ", hipotenusa)
+        else:
+            print("Os valores dos catetos devem ser positivos ou iguais a zero.")
 2. **Área de um Círculo**
    - Solicite ao usuário o raio de um círculo e calcule sua área utilizando **`math.pi`** e a fórmula \( \text{Área} = \pi \cdot r^2 \).
-
+    raio = float(input("Digite o valor do raio do círculo: "))
+    area = math.pi * (raio ** 2)
+    print(f"A área do círculo é: {area}")
 3. **Cálculos Trigonométricos**
    - Peça ao usuário um ângulo em graus e:
      - Converta-o para radianos com **`math.radians`**.
      - Calcule o seno, cosseno e tangente utilizando **`math.sin`**, **`math.cos`** e **`math.tan`**.
-
+    angulo = float(input("Digite o ângulo em graus: "))
+    angulo_rad = math.radians(angulo)
+    seno = math.sin(angulo_rad)
+    cosseno = math.cos(angulo_rad)
+    tangente = math.tan(angulo_rad)
+    print(f"Seno: {seno}, Cosseno: {cosseno}, Tangente: {tangente}")
 4. **Arredondamento e Fatoriais**
    - Escreva um programa que:
      - Solicite um número decimal e arredonde-o para cima e para baixo usando **`math.ceil`** e **`math.floor`**.
      - Solicite um número inteiro e calcule seu fatorial com **`math.factorial`**.
-
-
+    decimal = float(input("Digite um número decimal: "))
+    arredondado_cima = math.ceil(decimal)
+    arredondado_baixo = math.floor(decimal)
+    print(f"Arredondado para cima: {arredondado_cima}, Arredondado para baixo: {arredondado_baixo}")
+    fator = int(input("Digite um número inteiro para calcular o fatorial: "))
+    fatorial = math.factorial(fator)
+    print(f"O fatorial de {fator} é: {fatorial}")
 
 ### **Exercícios com a biblioteca `random`**
 
 1. **Números Aleatórios**
    - Gere 10 números aleatórios entre 1 e 100 usando **`random.randint`** e exiba-os na tela.
-
+    numeros_aleatorios = [random.randint(1, 100) for _ in range(10)]
+    print("Números aleatórios:", numeros_aleatorios)
 2. **Simulação de Dado**
    - Simule o lançamento de um dado de 6 lados. Use **`random.randint`** para gerar números entre 1 e 6 e pergunte ao usuário se ele deseja continuar lançando o dado.
-
+    valor_dado = random.randint(1, 6)
+    print (f'O valor do dado é: {valor_dado}')
+    continuar = input("Deseja continuar lançando o dado? (s/n): ")
+    while continuar.lower() == 's':
+        valor_dado = random.randint(1, 6)
+        print (f'O valor do dado é: {valor_dado}')
+        continuar = input("Deseja continuar lançando o dado? (s/n): ")
+    else:
+        print("Fim do jogo.")
 3. **Aleatorização de Listas**
    - Escreva um programa que receba uma lista de nomes e os embaralhe usando **`random.shuffle`**.
-
+    nomes = input("Digite os nomes separados por vírgula: ").split(",")
+    random.shuffle(nomes)
+    print("Nomes embaralhados:", nomes) 
 4. **Jogo de Adivinhação**
    - Crie um jogo onde o programa escolhe um número entre 1 e 50 com **`random.randint`** e o usuário deve adivinhar. O programa deve fornecer feedback se o palpite foi muito alto ou muito baixo, até que o número correto seja encontrado.
-
+    numero = random.radint(1,50)
+    palpite = 0
+    while palpite != numero:
+        palpite = int(input("Adivinhe o número entre 1 e 50: "))
+        if palpite < numero:
+            print("Muito baixo! Tente novamente.")
+        elif palpite > numero:
+            print("Muito alto! Tente novamente.")
+        else:
+            print("Parabéns! Você adivinhou o número!")
 5. **Loteria Simples**
    - Gere 6 números aleatórios distintos entre 1 e 60, simulando um bilhete de loteria, utilizando **`random.sample`**.
- '''
+    numeros_aleatorios = random.sample(range(1, 61), 6)
+    print("Seus números da sorte são:", numeros_aleatorios)
+'''
