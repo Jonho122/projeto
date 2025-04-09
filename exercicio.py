@@ -1,5 +1,4 @@
-#Primeiro mês de aula
-'''
+'''Primeiro mês de aula
     import math
     import random
     # Prática um, gerar um programa que conte a quantidade de vogais em uma string.
@@ -197,8 +196,7 @@
     '''
     # Exercício 1: Divisão
 #Segundo mês de aula (Intermediário)
-'''
-#Introdução a classes e objetos.
+'''Introdução a classes e objetos.
     class retangulo:
         def __init__(self, largura, altura):
             self.largura = largura
@@ -210,5 +208,38 @@
     retangulo1 = retangulo(5, 10)        
     retangulo2 = retangulo(3, 4)
     print("Área do retângulo 1 é {} e o perímetro é {}".format(retangulo1.area(), retangulo1.perimetro()))
-    print("Área do retângulo 2 é {} e o perímetro é {}".format(retangulo2.area(), retangulo2.perimetro()))
-'''
+    print("Área do retângulo 2 é {} e o perímetro é {}".format(retangulo2.area(), retangulo2.perimetro()))'''
+'''Herança e polimorfismo.
+    #Quando tratamos em um codigo com uma classe onde o sujeito pode possuir mais de um tipo de objeto, por exemplo, 
+    #um carro pode ser um carro esportivo ou um carro de passeio, fazemos uso da herança e polimorfismo, 
+    #onde fazemos uso de uma classe mãe, que terá outras variações dela. O polimorfismo entra na questão de usar diferentes
+    #classes que possuem o mesmo método, mas com comportamentos diferentes.
+    class jogador:
+        def __init__(self, altura, passe, drible, velocidade, precisão):
+            self.altura = altura
+            self.passe = passe
+            self.drible = drible
+            self.velocidade = velocidade
+            self.precisão = precisão
+        def correr(self):
+            print("O jogador está correndo")
+        def passar(self):
+            print("O jogador está passando a bola") 
+        def driblar(self):
+            print("O jogador está driblando")
+        def chutar(self):
+            print("O jogador está chutando")
+        def defender(self):
+            print("O jogador está defendendo")
+    class jogador_atacante(jogador):
+        def chutar(self):
+            print("O jogador atacante está chutando com precisão")
+        def defender(self):
+            print("O jogador tenta tirar a bola do adversário")
+    class jogador_goleiro(jogador):
+        def defender(self):
+            print("O goleiro está defendendo com precisão")
+        def chutar(self):
+            print("O goleiro tenta chutar a bola para o ataque")'''
+#Prática 1
+    
