@@ -242,4 +242,21 @@
         def chutar(self):
             print("O goleiro tenta chutar a bola para o ataque")'''
 #Prática 1
-    
+''' Objetivo:
+Criar uma aplicação que gerencie o aluguel de veículos.
+O que será feito:
+- Definição de Classes:- Criar classes para representar os diferentes tipos de veículos (Carro, Moto, Caminhão) e uma classe principal para gerenciar o aluguel.
+- Implementar atributos como modelo, placa e preço por dia.
+
+- Uso de Encapsulamento:- Garantir a segurança e integridade dos dados através de atributos privados e métodos getters e setters.
+
+- Uso de Herança:- As classes específicas (Carro, Moto, Caminhão) herdarão propriedades e métodos da classe principal Veículo.
+
+- Uso de Polimorfismo:- Cada classe de veículo terá um método que calcula o preço do aluguel com base em diferentes regras de negócios.
+
+
+Expectativa:
+Ao final, espera-se:
+- Uma aplicação funcional que permita cadastrar veículos, calcular valores de aluguel e realizar consultas.
+- Código modular, legível e reutilizável com base nos pilares da POO (Encapsulamento, Herança e Polimorfismo).
+'''
