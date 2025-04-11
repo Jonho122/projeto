@@ -260,3 +260,57 @@ Ao final, espera-se:
 - Uma aplicação funcional que permita cadastrar veículos, calcular valores de aluguel e realizar consultas.
 - Código modular, legível e reutilizável com base nos pilares da POO (Encapsulamento, Herança e Polimorfismo).
 '''
+class veiculo (object):
+    def __init__(self, modelo, placa, preco_por_dia):
+        self.__modelo = modelo
+        self.__placa = placa
+        self.__preco_por_dia = preco_por_dia
+
+    @property
+    def modelo(self):
+        return self.__modelo
+
+    @property
+    def placa(self):
+        return self.__placa
+
+    @property
+    def preco_por_dia(self):
+        return self.__preco_por_dia
+
+    def calcular_preco_aluguel(self, dias):
+        return self.__preco_por_dia * dias
+
+class carro (veiculo):
+    def __init__(self, modelo, placa, preco_por_dia, tipo):
+        super().__init__(modelo, placa, preco_por_dia)
+        self.__tipo = tipo
+
+    @property
+    def tipo(self):
+        return self.__tipo
+
+    def calcular_preco_aluguel(self, dias):
+        return super().calcular_preco_aluguel(dias) * 1.1  # 10% a mais para carros
+class moto (veiculo):
+    def __init__(self, modelo, placa, preco_por_dia, cilindrada):
+        super().__init__(modelo, placa, preco_por_dia)
+        self.__cilindrada = cilindrada
+
+    @property
+    def cilindrada(self):
+        return self.__cilindrada
+
+    def calcular_preco_aluguel(self, dias):
+        return super().calcular_preco_aluguel(dias) * 0.9  # 10% a menos para motos
+class caminhão (veiculo):  
+    def __init__(self, modelo, placa, preco_por_dia, capacidade_carga):
+        super().__init__(modelo, placa, preco_por_dia)
+        self.__capacidade_carga = capacidade_carga
+
+    @property
+    def capacidade_carga(self):
+        return self.__capacidade_carga
+
+    def calcular_preco_aluguel(self, dias):
+        return super().calcular_preco_aluguel(dias) * 1.5  # 50% a mais para caminhões
