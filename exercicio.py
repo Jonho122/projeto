@@ -194,8 +194,7 @@
     numeros_aleatorios = random.sample(range(1, 61), 6)
         print ("Seus números da sorte são:", numeros_aleatorios)
     '''
-    # Exercício 1: Divisão
-#Segundo mês de aula (Intermediário)
+# Segundo mês de aula (Intermediário)
 '''Introdução a classes e objetos.
     class retangulo:
         def __init__(self, largura, altura):
@@ -209,6 +208,7 @@
     retangulo2 = retangulo(3, 4)
     print("Área do retângulo 1 é {} e o perímetro é {}".format(retangulo1.area(), retangulo1.perimetro()))
     print("Área do retângulo 2 é {} e o perímetro é {}".format(retangulo2.area(), retangulo2.perimetro()))'''
+
 '''Herança e polimorfismo.
     #Quando tratamos em um codigo com uma classe onde o sujeito pode possuir mais de um tipo de objeto, por exemplo, 
     #um carro pode ser um carro esportivo ou um carro de passeio, fazemos uso da herança e polimorfismo, 
@@ -241,76 +241,88 @@
             print("O goleiro está defendendo com precisão")
         def chutar(self):
             print("O goleiro tenta chutar a bola para o ataque")'''
-#Prática 1
-''' Objetivo:
-Criar uma aplicação que gerencie o aluguel de veículos.
-O que será feito:
-- Definição de Classes:- Criar classes para representar os diferentes tipos de veículos (Carro, Moto, Caminhão) e uma classe principal para gerenciar o aluguel.
-- Implementar atributos como modelo, placa e preço por dia.
 
-- Uso de Encapsulamento:- Garantir a segurança e integridade dos dados através de atributos privados e métodos getters e setters.
+'''Prática 1:
+    Criar uma aplicação que gerencie o aluguel de veículos.
+    O que será feito:
+    - Definição de Classes:- Criar classes para representar os diferentes tipos de veículos (Carro, Moto, Caminhão) e uma classe principal para gerenciar o aluguel.
+    - Implementar atributos como modelo, placa e preço por dia.
 
-- Uso de Herança:- As classes específicas (Carro, Moto, Caminhão) herdarão propriedades e métodos da classe principal Veículo.
+    - Uso de Encapsulamento:- Garantir a segurança e integridade dos dados através de atributos privados e métodos getters e setters.
 
-- Uso de Polimorfismo:- Cada classe de veículo terá um método que calcula o preço do aluguel com base em diferentes regras de negócios.
+    - Uso de Herança:- As classes específicas (Carro, Moto, Caminhão) herdarão propriedades e métodos da classe principal Veículo.
+
+    - Uso de Polimorfismo:- Cada classe de veículo terá um método que calcula o preço do aluguel com base em diferentes regras de negócios.
 
 
-Expectativa:
-Ao final, espera-se:
-- Uma aplicação funcional que permita cadastrar veículos, calcular valores de aluguel e realizar consultas.
-- Código modular, legível e reutilizável com base nos pilares da POO (Encapsulamento, Herança e Polimorfismo).
-'''
-class veiculo (object):
-    def __init__(self, modelo, placa, preco_por_dia):
-        self.__modelo = modelo
-        self.__placa = placa
-        self.__preco_por_dia = preco_por_dia
+    Expectativa:
+    Ao final, espera-se:
+    - Uma aplicação funcional que permita cadastrar veículos, calcular valores de aluguel e realizar consultas.
+    - Código modular, legível e reutilizável com base nos pilares da POO (Encapsulamento, Herança e Polimorfismo).
 
-    @property
-    def modelo(self):
-        return self.__modelo
+    class veiculo (object):
+        def __init__(self, modelo, placa, preco_por_dia):
+            self.__modelo = modelo
+            self.__placa = placa
+            self.__preco_por_dia = preco_por_dia
 
-    @property
-    def placa(self):
-        return self.__placa
+        @property
+        def modelo(self):
+            return self.__modelo
 
-    @property
-    def preco_por_dia(self):
-        return self.__preco_por_dia
+        @property
+        def placa(self):
+            return self.__placa
 
-    def calcular_preco_aluguel(self, dias):
-        return self.__preco_por_dia * dias
+        @property
+        def preco_por_dia(self):
+            return self.__preco_por_dia
 
-class carro (veiculo):
-    def __init__(self, modelo, placa, preco_por_dia, tipo):
-        super().__init__(modelo, placa, preco_por_dia)
-        self.__tipo = tipo
+        def calcular_preco_aluguel(self, dias):
+            return self.__preco_por_dia * dias
 
-    @property
-    def tipo(self):
-        return self.__tipo
+    class carro (veiculo):
+        def __init__(self, modelo, placa, preco_por_dia, tipo):
+            super().__init__(modelo, placa, preco_por_dia)
+            self.__tipo = tipo
 
-    def calcular_preco_aluguel(self, dias):
-        return super().calcular_preco_aluguel(dias) * 1.1  # 10% a mais para carros
-class moto (veiculo):
-    def __init__(self, modelo, placa, preco_por_dia, cilindrada):
-        super().__init__(modelo, placa, preco_por_dia)
-        self.__cilindrada = cilindrada
+        @property
+        def tipo(self):
+            return self.__tipo
 
-    @property
-    def cilindrada(self):
-        return self.__cilindrada
+        def calcular_preco_aluguel(self, dias):
+            return super().calcular_preco_aluguel(dias) * 1.1  # 10% a mais para carros
+    class moto (veiculo):
+        def __init__(self, modelo, placa, preco_por_dia, cilindrada):
+            super().__init__(modelo, placa, preco_por_dia)
+            self.__cilindrada = cilindrada
 
-    def calcular_preco_aluguel(self, dias):
-        return super().calcular_preco_aluguel(dias) * 0.9  # 10% a menos para motos
-class caminhão (veiculo):  
-    def __init__(self, modelo, placa, preco_por_dia, capacidade_carga):
-        super().__init__(modelo, placa, preco_por_dia)
-        self.__capacidade_carga = capacidade_carga
+        @property
+        def cilindrada(self):
+            return self.__cilindrada
 
-    @property
-    def capacidade_carga(self):
-        return self.__capacidade_carga
+        def calcular_preco_aluguel(self, dias):
+            return super().calcular_preco_aluguel(dias) * 0.9  # 10% a menos para motos
+    class caminhão (veiculo):  
+        def __init__(self, modelo, placa, preco_por_dia, capacidade_carga):
+            super().__init__(modelo, placa, preco_por_dia)
+            self.__capacidade_carga = capacidade_carga
 
-    def calcular_preco_aluguel(self, dias):
-        return super().calcular_preco_aluguel(dias) * 1.5  # 50% a mais para caminhões
+        @property
+        def capacidade_carga(self):
+            return self.__capacidade_carga
+
+        def calcular_preco_aluguel(self, dias):
+            return super().calcular_preco_aluguel(dias) * 1.5  # 50% a mais para caminhões
+    '''
+
+'''Manipulação de dados
+    #List Comprehension é uma maneira concisa de criar listas em Python. Ela permite que você crie uma nova lista aplicando 
+    #uma expressão a cada item de uma sequência (como uma lista, tupla ou string) e filtrando os itens com base em uma condição.
+    lista_de_precos = [10, 20, 30, 40, 50]
+    nova_lista = []
+    for preco in lista_de_precos:
+        nova_lista.append(preco * 2)
+        print(nova_lista)
+    #ou pode ser feito com list comprehension
+    nova_lista = [preco * 2 for preco in lista_de_precos]'''
